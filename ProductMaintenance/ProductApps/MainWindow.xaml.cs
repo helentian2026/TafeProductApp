@@ -38,6 +38,8 @@ namespace ProductApps
                 totalDeliveryTextBox.Text = Convert.ToString(totalDelivery);
                 decimal totalWrap = cProduct.TotalPayment + 25 + 5;
                 totalWrapTextBox.Text = Convert.ToString(totalWrap);
+                decimal finalCharge = (cProduct.TotalPayment + 25 + 5)* 1.1m;
+                totalChargeGST.Text = Convert.ToString(finalCharge);
             }
             catch (FormatException)
             {
@@ -53,6 +55,7 @@ namespace ProductApps
             totalPaymentTextBlock.Text = "";
             totalDeliveryTextBox.Text = "";
             totalWrapTextBox.Text = "";
+            totalChargeGST.Text = "";
         }
 
         private void closeButton_Click(object sender, RoutedEventArgs e)
